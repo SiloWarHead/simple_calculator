@@ -1,0 +1,35 @@
+.calc-btn, .calc-btn-op, .calc-btn-equal, .calc-btn-clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 56px;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.25rem;
+  border-radius: 0.75rem;
+  transition: transform 0.08s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  box-shadow: 0 6px 14px rgba(2,6,23,0.45);
+  padding: 0;
+}
+
+/* Number buttons */
+.calc-btn { background-color: #374151; color: white; }
+.calc-btn:hover { background-color: #4b5563; transform: translateY(-1px); }
+.calc-btn:active { transform: translateY(1px); background-color: #6b7280; }
+
+/* Operator buttons */
+.calc-btn-op { background-color: #4f46e5; color: white; }
+.calc-btn-op:hover { background-color: #6366f1; transform: translateY(-1px); }
+.calc-btn-op:active { transform: translateY(1px); background-color: #818cf8; }
+
+/* Equals button */
+.calc-btn-equal { background-color: #059669; color: white; }
+.calc-btn-equal:hover { background-color: #10b981; transform: translateY(-1px); }
+.calc-btn-equal:active { transform: translateY(1px); background-color: #34d399; }
+
+/* Clear button */
+.calc-btn-clear { background-color: #dc2626; color: white; margin-top: 6px; }
+.calc-btn-clear:hover { background-color: #ef4444; transform: translateY(-1px); }
+.calc-btn-clear:active { transform: translateY(1px); background-color: #f87171; }

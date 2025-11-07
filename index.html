@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-gray-800 to-slate-900 flex items-center justify-center text-white font-sans">
+
+  <div class="bg-gray-900 border border-gray-700 shadow-2xl rounded-3xl p-6 w-80">
+    <input 
+      id="display"
+      type="text"
+      readonly
+      class="w-full text-right text-3xl bg-gray-800 rounded-xl py-4 px-3 mb-5 outline-none font-mono shadow-inner placeholder-gray-500"
+      placeholder="0"
+    />
+
+    <div class="grid grid-cols-4 gap-3">
+      <button class="calc-btn" onclick="append('7')">7</button>
+      <button class="calc-btn" onclick="append('8')">8</button>
+      <button class="calc-btn" onclick="append('9')">9</button>
+      <button class="calc-btn-op" onclick="append('/')">÷</button>
+
+      <button class="calc-btn" onclick="append('4')">4</button>
+      <button class="calc-btn" onclick="append('5')">5</button>
+      <button class="calc-btn" onclick="append('6')">6</button>
+      <button class="calc-btn-op" onclick="append('*')">×</button>
+
+      <button class="calc-btn" onclick="append('1')">1</button>
+      <button class="calc-btn" onclick="append('2')">2</button>
+      <button class="calc-btn" onclick="append('3')">3</button>
+      <button class="calc-btn-op" onclick="append('-')">−</button>
+
+      <button class="calc-btn" onclick="append('0')">0</button>
+      <button class="calc-btn" onclick="append('.')">.</button>
+      <button class="calc-btn-equal" onclick="calculate()">=</button>
+      <button class="calc-btn-op" onclick="append('+')">+</button>
+
+      <button class="calc-btn-clear col-span-4" onclick="clearDisplay()">C</button>
+    </div>
+  </div>
+
+  <script>
+    let expression = '';
+
+    function append(value) {
+      expression += value;
+      document.getElementById('display').value = expression;
+    }
+
+    function clearDisplay() {
+      expression = '';
+      document.getElementById('display').value = '';
+    }
+
+    function calculate() {
+      try {
+        // evaluate directly in browser (no backend needed)
+        const result = eval(expression);
+        expression = result.toString();
+        document.getElementById('display').value = expression;
+      } catch (e) {
+        alert('Invalid Expression');
+        clearDisplay();
+      }
+    }
+  </script>
+</body>
+</html>
