@@ -12,7 +12,6 @@ function clearDisplay() {
 
 function calculate() {
   try {
-    // evaluate safely
     const result = eval(expression);
     expression = result.toString();
     document.getElementById('display').value = expression;
