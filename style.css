@@ -1,17 +1,17 @@
+/* Base button style */
 .calc-btn, .calc-btn-op, .calc-btn-equal, .calc-btn-clear {
-  display: inline-flex;
-  align-items: center;
+  display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
   height: 56px;
   border: none;
-  cursor: pointer;
-  user-select: none;
-  font-size: 1.25rem;
   border-radius: 0.75rem;
-  transition: transform 0.08s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.1s ease;
   box-shadow: 0 6px 14px rgba(2,6,23,0.45);
-  padding: 0;
+  user-select: none;
 }
 
 /* Number buttons */
@@ -33,3 +33,17 @@
 .calc-btn-clear { background-color: #dc2626; color: white; margin-top: 6px; }
 .calc-btn-clear:hover { background-color: #ef4444; transform: translateY(-1px); }
 .calc-btn-clear:active { transform: translateY(1px); background-color: #f87171; }
+
+/* Ensure buttons fill grid cells */
+.grid .calc-btn, .grid .calc-btn-op, .grid .calc-btn-equal {
+  width: 100%;
+}
+
+/* Responsive tweaks */
+@media (max-width: 420px) {
+  .bg-gray-900 { width: 92vw; }
+  .calc-btn, .calc-btn-op, .calc-btn-equal, .calc-btn-clear {
+    height: 50px;
+    font-size: 1.1rem;
+  }
+}
